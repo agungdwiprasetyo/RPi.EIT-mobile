@@ -1,12 +1,11 @@
 package com.raspieit.agung.raspieit;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -18,6 +17,8 @@ import com.raspieit.agung.raspieit.Views.ImageFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Fragment fragment;
+    private FragmentManager fragmentManager;
     private TextView mTextMessage;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
 
@@ -26,11 +27,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewPager viewpage = (ViewPager)findViewById(R.id.viewPager);
-        setupPageView(viewpage);
+//        ViewPager viewpage = (ViewPager)findViewById(R.id.viewPager);
+//        setupPageView(viewpage);
+//
+//        TabLayout tabs = (TabLayout)findViewById(R.id.tabs);
+//        tabs.setupWithViewPager(viewpage);
 
-        TabLayout tabs = (TabLayout)findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewpage);
+        fragmentManager = getSupportFragmentManager();
+        fragment = new HomeFragment();
+        final FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.content, fragment).commit();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,10 +47,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_home:
 //                    mTextMessage.setText(R.string.title_home);
 //                        callFragment(new HomeFragment());
-                        return true;
+                        fragment = new HomeFragment();
+                        break;
                     case R.id.navigation_dashboard:
 //                        mTextMessage.setText(R.string.title_dashboard);
-                        return true;
+                        fragment = new ImageFragment();
+                        break;
                     case R.id.navigation_notifications:
 //                        mTextMessage.setText(R.string.title_notifications);
                         return true;
@@ -52,26 +60,11 @@ public class MainActivity extends AppCompatActivity {
 //                        mTextMessage.setText(R.string.title_image);
                         return true;
                 }
-                return false;
+                final FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.content, fragment).commit();
+                return true;
             }
 
         });
-    }
-
-    private void callFragment(Fragment fragment) {
-        FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.content,fragment);
-        transaction.commit();
-    }
-
-    // slide tab fragment
-    public void setupPageView(ViewPager viewpage) {
-        ViewPageAdapter viewpageadapter = new ViewPageAdapter(getSupportFragmentManager());
-        viewpageadapter.addFragment(new HomeFragment(), "Home");
-        viewpageadapter.addFragment(new ImageFragment(), "Image");
-        viewpageadapter.addFragment(new HomeFragment(), "Image2");
-        viewpageadapter.addFragment(new ImageFragment(), "Image3");
-        viewpage.setAdapter(viewpageadapter);
     }
 }
