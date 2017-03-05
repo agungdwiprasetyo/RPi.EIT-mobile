@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.raspieit.agung.raspieit.MainActivity;
+import com.raspieit.agung.raspieit.Activity.MainActivity;
 import com.raspieit.agung.raspieit.R;
 
 public class SplashScreen extends AppCompatActivity {

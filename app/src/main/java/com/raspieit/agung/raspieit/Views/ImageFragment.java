@@ -35,10 +35,13 @@ public class ImageFragment extends Fragment {
         return view;
     }
 
+    // add fragment to list in adapters
     public void setupPageView(ViewPager viewpage) {
-        ViewPageAdapter viewpageadapter = new ViewPageAdapter(getFragmentManager());
-        viewpageadapter.addFragment(new Sub1ImageFragment(), "Page 1");
-        viewpageadapter.addFragment(new Sub2ImageFragment(), "Page 2");
+        ViewPageAdapter viewpageadapter = new ViewPageAdapter(getChildFragmentManager());
+        viewpageadapter.addFragment(new Sub1ImageFragment(), "Data");
+        viewpageadapter.addFragment(new Sub2ImageFragment(), "Progress");
+        viewpageadapter.addFragment(new Sub1ImageFragment(), "Hasil");
+        viewpageadapter.addFragment(new Sub2ImageFragment(), "Galeri");
         viewpage.setAdapter(viewpageadapter);
     }
 }
