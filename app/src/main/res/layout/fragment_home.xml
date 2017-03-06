@@ -1,71 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Views.HomeFragment"
+    tools:context=".Fragment.HomeFragment"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
-            <TextView
-                android:id="@+id/batPercTxtVw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="99%"
-                android:textSize="50sp" />
-            <TextView
-                android:id="@+id/batPowTxtVw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="34 mAH"
-                android:layout_below="@id/batPercTxtVw"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true">
-                <TextView
-                    android:id="@+id/hourAproxTxtVw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7"
-                    android:textSize="45sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:text="h"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp"/>
-                <TextView
-                    android:id="@+id/minAproxTxtVw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="32"
-                    android:textSize="45sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:text="m"/>
-            </LinearLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+        android:gravity="center"
+        android:background="@drawable/border_shape"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info Penggunaan Listrik"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="+ Perkiraan Penggunaan Listrik PLN :"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="70kWh"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="+ Perkiraan Penggunaan Listrik Eco :"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="25kWh"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="+ Perkiraan Biaya PLN Bulanan :"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Rp.102.130"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="+ Perkiraan Penghematan :"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Rp.60.100"
+            android:textSize="25sp"/>
+    </LinearLayout>
 
 </LinearLayout>

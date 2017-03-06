@@ -4,4 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_image">Image</string>
+    <string name="fragment1">Home</string>
+    <string name="fragment2">Data</string>
+    <string name="fragment3">Progress</string>
+    <string name="fragment4">Galeri</string>
+    <string name="fragment5">Alat</string>
 </resources>

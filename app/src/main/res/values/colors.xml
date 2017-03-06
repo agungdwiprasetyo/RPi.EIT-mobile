@@ -3,4 +3,5 @@
     <color name="colorPrimary">#d92525</color>
     <color name="colorPrimaryDark">#890017</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="tabUnselectColor">#000000</color>
 </resources>
